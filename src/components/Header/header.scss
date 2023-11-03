@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 9%;
+    width: 100vw;
+    background-color: #ffff;
+
+    img {
+        height: 70px;
+        cursor: pointer;
+    }
+
+    button {
+        margin-right: 10px;
+        padding: 10px 25px;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        background-color: #1a1a1a;
+        cursor: pointer;
+        outline: 4px auto red;
+
+    }
+
+    button:hover {
+        border-color: red;
+    }
+
+    button:focus,
+    button:focus-visible {
+        outline: 4px auto gray;
+
+    }
+}

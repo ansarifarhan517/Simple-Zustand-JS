@@ -1,0 +1,54 @@
+.card {
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: 5px 5px 20px 10px white;
+    border-radius: 10px;
+
+
+    .imageContainer {
+        display: flex;
+        align-items: center;
+
+        .LoginCardImage {
+            height: 300px;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    
+
+
+    }
+
+    .verticalLine {
+        border-right: 1px solid #888;
+    }
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    width: 350px;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 20px;
+
+   
+    input {
+        height: 35px;
+        margin-bottom: 10px;
+    }
+
+    .loginSubmit {
+        padding: 10px 25px;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        background-color: #1a1a1a;
+        cursor: pointer;
+        outline: 4px auto red;
+    }
+
+
+}

@@ -3,11 +3,13 @@ import { useStore } from '../store/store'
 
 const RightCard = () => {
     const tasks = useStore((state) => state.tasks)
-    const taskCompletioner = useStore((state) => state.taskCompletioner)
+    const taskInCompletioner = useStore((state) => state.taskInCompletioner)
 
     const onChangeHandler = (e) => {
-        taskCompletioner(+e.target.id)
+        taskInCompletioner(+e.target.id)
     }
+console.log(tasks)
+
     console.log("RELOADED RIGHT CARD")
     return (
         <div className='rightCard'>

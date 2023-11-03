@@ -1,27 +1,29 @@
 import { create } from 'zustand';
+import { createRightCardSlice } from './Slice/RightCardSlice';
+import { createLeftCardSlice } from './Slice/LeftCardSlice';
+import { createLoginSlice } from './Slice/LoginSlice';
 
-const store = (set) => ({
+const dataSlice = () => ({
   tasks: [
     { id: 1, title: "Learn HTML", completed: true },
     { id: 2, title: "Learn CSS", completed: false },
     { id: 3, title: "Learn JS", completed: false }
   ],
-  taskCompletioner: (taskid) => { 
-    return set((state) => ({
-    tasks: state.tasks.map((task) =>
-      task.id === taskid ? { ...task, completed: !task.completed } : task
-    )
-  }))},
-  loggedIn: true,
-  loginChanger:() => set((state) => ({ loggedIn: !state.loggedIn }) )
-  
 });
 
-const useStore = create(store);
+
+const useStore = create((...a) => ({
+  ...createRightCardSlice(...a),
+  ...createLeftCardSlice(...a),
+  ...dataSlice(...a),
+  ...createLoginSlice(...a)
+
+}
+));
 export { useStore };
 
 
- 
+
 // let a =[{id: 1, title: 'Learn HTML', completed: true},
 // {id: 2, title: 'Learn CSS', completed: false},
 // {id: 3, title: 'Learn JS', completed: false}]
