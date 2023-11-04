@@ -8,7 +8,6 @@ const RightCard:React.FC = () => {
     const onChangeHandler = (e: ChangeEvent) => {
         taskInCompletioner(+e.target.id)
     }
-console.log(tasks)
 
     console.log("RELOADED RIGHT CARD")
     return (
