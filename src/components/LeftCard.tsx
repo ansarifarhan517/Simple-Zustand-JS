@@ -1,24 +1,22 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import { useStore } from '../store/store'
 
-const LeftCard = () => {
+const LeftCard:React.FC = () => {
 
     const tasks = useStore((state) => state.tasks)
     const taskCompletioner = useStore((state) => state.taskCompletioner)
-    const loggedIn = useStore((state) => state.loggedIn)
     const loginChanger = useStore((state) => state.loginChanger)
-    const onChangeHandler = (e) => {
+    const onChangeHandler = (e: ChangeEvent) => {
         taskCompletioner(+e.target.id)
     }
     const loginHandler = () => { 
         loginChanger()
     }
-    console.log("RELOADED LEFT CARD" , loggedIn)
+    console.log("RELOADED LEFT CARD" )
 
     return (
         <div className='leftCard'>
             <h3>TO DO Tasks</h3>
-            <span  onClick={loginHandler}>{loggedIn ? "true" : "false"}</span>
             <div className='leftCardContent'>
                 <ul>
                     {
@@ -33,7 +31,7 @@ const LeftCard = () => {
                                         {task.title}
 
                                         <input
-                                            id={task.id}
+                                            id={task.id.toString()}
                                             type='checkbox'
                                             checked={task.completed}
                                             onChange={onChangeHandler}

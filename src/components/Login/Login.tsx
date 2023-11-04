@@ -2,18 +2,17 @@ import React, { useCallback } from 'react'
 import './login.css'
 import LoginCardImage from '../../assets/HeaderLogo.png'
 import { useStore } from '../../store/store'
-const Login = () => {
+
+const Login: React.FC = () => {
 
     const loginChanger = useStore((state) => state.loginChanger)
 
-    const onSubmitHandler = useCallback(
-        (e) => {
-            e.preventDefault()
-            loginChanger()
+    const onSubmitHandler: React.MouseEventHandler = useCallback(
+        (e: React.MouseEvent<HTMLButtonElement>): void => {
+            loginChanger();
         },
-      []
-    )
-
+        []
+    );
     return (
 
 

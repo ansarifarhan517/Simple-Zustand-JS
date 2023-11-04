@@ -5,8 +5,9 @@ import RightCard from './components/RightCard'
 import Header from './components/Header/Header'
 import { useStore } from './store/store'
 import Login from './components/Login/Login'
+import React from 'react'
 
-function App() {
+const App: React.FC = () => {
 
   const loggedIn = useStore((state) => state.loggedIn)
   console.log(loggedIn)
@@ -26,8 +27,8 @@ function App() {
         </div>
       </>
       : <div className='loginContainer'><Login /></div>
-        )
+  )
 
 }
 
-        export default App
+export default App

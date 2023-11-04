@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import { useStore } from '../store/store'
 
-const RightCard = () => {
+const RightCard:React.FC = () => {
     const tasks = useStore((state) => state.tasks)
     const taskInCompletioner = useStore((state) => state.taskInCompletioner)
 
-    const onChangeHandler = (e) => {
+    const onChangeHandler = (e: ChangeEvent) => {
         taskInCompletioner(+e.target.id)
     }
 console.log(tasks)
@@ -27,7 +27,7 @@ console.log(tasks)
                                     {task.title}
 
                                     <input
-                                        id={task.id}
+                                        id={task.id.toString()}
                                         type='checkbox'
                                         checked={task.completed}
                                         onChange={onChangeHandler}
