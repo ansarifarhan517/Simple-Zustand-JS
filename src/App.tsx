@@ -10,7 +10,7 @@ import React from 'react'
 const App: React.FC = () => {
 
   const loggedIn = useStore((state) => state.loggedIn)
-  console.log(loggedIn)
+  console.log(loggedIn ,"login")
   return (
 
     loggedIn ?

@@ -5,10 +5,9 @@ import { useStore } from '../../store/store'
 const Header = () => {
 
     const loginChanger = useStore(state => state.loginChanger)
-
-
+    
     const logoutHandler = () => {
-        loginChanger()
+        loginChanger(false)
     }
     return (
         <div className='header'>

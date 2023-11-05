@@ -5,13 +5,10 @@ const LeftCard:React.FC = () => {
 
     const tasks = useStore((state) => state.tasks)
     const taskCompletioner = useStore((state) => state.taskCompletioner)
-    const loginChanger = useStore((state) => state.loginChanger)
     const onChangeHandler = (e: ChangeEvent) => {
         taskCompletioner(+e.target.id)
     }
-    const loginHandler = () => { 
-        loginChanger()
-    }
+   
     console.log("RELOADED LEFT CARD" )
 
     return (
